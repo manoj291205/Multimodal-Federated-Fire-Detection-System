@@ -176,7 +176,8 @@ Results: `results/reasoning_eval_val.json`, `results/reasoning_eval_test.json`.
 python -m venv .venv && .venv\Scripts\activate          # Linux/macOS: source .venv/bin/activate
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128   # GPU; omit for CPU
 pip install -r requirements.txt -r requirements-edge.txt
-python scripts/download_dataset.py      # needs ROBOFLOW_API_KEY (dataset: CC BY 4.0)
+python scripts/download_models.py       # trained vision models from the v2.0.0 release
+python scripts/download_dataset.py      # only for retraining; needs ROBOFLOW_API_KEY (CC BY 4.0)
 python train.py                         # splits, sensor, vision, FL, fusion stages
 pytest -q                               # 36 tests, no hardware needed
 ```
